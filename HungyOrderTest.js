@@ -2,7 +2,7 @@ describe('Hungry Test', () => {
     it('Goes to website and prepares order', () => {
         cy.visit('https://tryhungry.com')
         cy.viewport(1200, 1000)
-        // I kept getting errors after going to the tryhungry website. It seems to be a CSS issue with cypress. I used the below line to ignore them.
+        // I kept getting errors after going to the tryhungry website. It seems to be a CSS issue with cypress. I used the line below to ignore them.
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false
         })
