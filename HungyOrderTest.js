@@ -5,6 +5,9 @@ describe('Hungry Test', () => {
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false
         })
+        
+        // Want to note I used this public repo to be able to hover over the menu bar and also click on some selections at the end of the transaction.
+        // https://github.com/dmtrKovalenko/cypress-real-events
         cy.get('.css-zjuvy6 > :nth-child(1) > p').realHover();
         cy.contains('Washington, DC').click()
         cy.get('.react-datepicker__input-container > input').click()
