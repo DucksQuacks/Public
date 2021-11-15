@@ -12,7 +12,7 @@ describe('Hungry Test', () => {
         cy.contains('Washington, DC').click()
         cy.get('.react-datepicker__input-container > input').click()
 
-        // Changes the date to the 24th
+        // Changes the date to the 24th since the website says you need to order at least 2 days prior. 
         cy.contains('24').click()
         cy.get(':nth-child(1) > .menu-card-container > :nth-child(3) > :nth-child(1) > .menu-card-cover-image-container > .blue-gradient-overlay').click()
         
