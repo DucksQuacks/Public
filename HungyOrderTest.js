@@ -2,6 +2,7 @@ describe('Hungry Test', () => {
     it('Goes to website and prepares order', () => {
         cy.visit('https://tryhungry.com')
         cy.viewport(1200, 1000)
+        // I kept getting errors after going to the tryhungry website. It seems to be a CSS issue with cypress. I used the below line to ignore them.
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false
         })
@@ -57,7 +58,8 @@ describe('Hungry Test', () => {
         cy.get(':nth-child(8) > :nth-child(2) > input').type('22030')
         cy.get('#front').realClick()
 
-        // Provides payment information
+        // Provides payment information. I couldn't get the automation to autofill the credit card info. Just had it auto choose the pay later option. 
+        // Waits 5 seconds as clicking that option too quickly can cause it to unselect.
         cy.wait(5000)
         cy.get('#ach').realClick() 
  
